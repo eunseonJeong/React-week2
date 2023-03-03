@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import Timer from "./component/Timer";
+import "./App.css";
+import Page from "./component/Page";
+
 
 function App() {
-  const [show,setShow] = useState(false);
-  return (
-    <>
-      {show && <Timer />}
+  const [isDark, setIsDark] = useState(false);
 
-      <button onClick={() => setShow(!show)} >titmer</button>
-    </>
+  return (
+
+      <Page isDark={isDark} setIsDark={setIsDark} />
+
   );
 }
 
