@@ -7,8 +7,8 @@ import Header from './Header';
 function Page({isDark,setIsDark}) {
   return (
     <div className='page'>
-        <Header isDark={isDark} />
-        <Content isDark={isDark} />
+        <Header  />
+        <Content  />
         <Footer isDark={isDark} setIsDark={setIsDark} />
     </div>
   )

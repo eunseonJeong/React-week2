@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from '../context/ThemeContext'
 
-function Footer({ isDark, setIsDark }) {
+function Footer() {
+  const {isDark,setIsDark} = useContext(ThemeContext)
+
   const toffleTheme = () => {
     setIsDark(!isDark);
   };
