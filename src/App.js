@@ -1,38 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from "react";
+import Timer from "./component/Timer";
 
 function App() {
-
-  const [count,setCount] = useState(0);
-  const [name,setName] = useState('');
-
-  const pulsBtnHandler = () =>{
-    setCount(count + 1)
-  }
-//렌더링 될 떄마다 실행됨
-  // useEffect(() =>{
-  //   console.log('안녕');
-  // },[count])
-
-  // useEffect(() =>{
-  //   console.log('이름');
-  // },[name])
-
-  useEffect(()=>{
-    console.log('hihi');
-  },[])
-
-  const chgBtnHandelr = (e) =>{
-    setName(e.target.value)
-  }
-
+  const [show,setShow] = useState(false);
   return (
-    <div>
-      버튼 : {count}
-      <button onClick={pulsBtnHandler}>플러스</button> <br />
-      <input type='text' value={name} onChange={chgBtnHandelr}/>
-      <span> </span>
-    </div>
-  )
+    <>
+      {show && <Timer />}
+
+      <button onClick={() => setShow(!show)} >titmer</button>
+    </>
+  );
 }
 
-export default App
+export default App;
