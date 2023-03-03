@@ -1,24 +1,15 @@
-import React, { useState } from 'react'
+import React,{useRef} from 'react'
 
 function App() {
-  const [count,setCount] = useState(0);
-  return ( 
-    <> 
-    <h1>{count}</h1>
-    <button
-        onClick={() => {
-          setCount((previousState) => previousState + 1);
-        }}
-      >
-      +
-    </button>
-    <button onClick={()=>{
-      setCount(p => p-1)
-    }}>
-      -
-    </button>
-    </>
-   
+  
+  const ref = useRef('초기값');
+  console.log('ref',ref)
+
+  ref.current = '변경값'
+  console.log('ref2',ref);
+
+  return (
+    <div>App</div>
   )
 }
 
